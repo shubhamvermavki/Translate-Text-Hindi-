@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image to Hindi Translator</title>
+</head>
+<body>
+    <h2>Upload Image with Text</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Translate</button>
+    </form>
+
+    {% if image_path %}
+        <h3>Uploaded Image:</h3>
+        <img src="{{ image_path }}" width="300"><br><br>
+    {% endif %}
+
+    {% if original_text %}
+        <h3>Extracted Text:</h3>
+        <p>{{ original_text }}</p>
+    {% endif %}
+
+    {% if hindi_text %}
+        <h3>Translated Text (Hindi):</h3>
+        <p>{{ hindi_text }}</p>
+    {% endif %}
+</body>
+</html>
